@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Search, User, ShoppingBag, Menu, X, ChevronRight, Instagram, Facebook } from 'lucide-react';
+import { Search, User, ShoppingBag, Menu, X, ChevronRight, ChevronDown, Instagram, Facebook } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import navData from '@/data/navigation.json';
 
@@ -10,6 +10,9 @@ const Navbar = () => {
     const [lastScrollY, setLastScrollY] = useState(0);
     const [activeCategory, setActiveCategory] = useState<string | null>(null);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    // Nuevo estado para controlar qué categoría móvil está expandida
+    const [expandedMobileCategory, setExpandedMobileCategory] = useState<string | null>(null);
 
     const [activeMobileTab, setActiveMobileTab] = useState("Mujer");
     const mobileTabs = ["Mujer", "Curvas", "Hombre"];
@@ -37,6 +40,7 @@ const Navbar = () => {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = 'unset';
+            setExpandedMobileCategory(null); // Resetear acordeón al cerrar
         }
     }, [isMobileMenuOpen]);
 
@@ -128,7 +132,7 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            {/* --- MENÚ MÓVIL UNIFICADO --- */}
+            {/* --- MENÚ MÓVIL UNIFICADO (ACTUALIZADO CON SUBCATEGORÍAS) --- */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <div className="fixed inset-0 z-[9999]">
@@ -164,8 +168,8 @@ const Navbar = () => {
                                         key={`tab-${tab}`}
                                         onClick={() => setActiveMobileTab(tab)}
                                         className={`flex-1 py-4 text-[11px] font-black uppercase tracking-widest transition-all ${activeMobileTab === tab
-                                                ? "border-b-4 border-black text-black"
-                                                : "text-gray-400 border-b-4 border-transparent"
+                                            ? "border-b-4 border-black text-black"
+                                            : "text-gray-400 border-b-4 border-transparent"
                                             }`}
                                     >
                                         {tab}
@@ -199,25 +203,56 @@ const Navbar = () => {
                                         <ChevronRight size={18} className="text-red-600" />
                                     </div>
 
-                                    {/* Categorías dinámicas */}
+                                    {/* Categorías dinámicas con Acordeón */}
                                     {navData.categories.map((cat) => (
-                                        <div
-                                            key={`mobile-list-${cat.title}`}
-                                            className="p-3 px-5 flex justify-between items-center border-b border-gray-50 active:bg-gray-50 transition-colors cursor-pointer group"
-                                        >
-                                            <div className="flex items-center gap-4">
-                                                <div className="w-14 h-14 rounded-full overflow-hidden border border-gray-100 shadow-sm bg-gray-50">
-                                                    <img
-                                                        src={cat.image || "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=100"}
-                                                        alt={cat.title}
-                                                        className="w-full h-full object-cover group-active:scale-110 transition-transform duration-300"
-                                                    />
+                                        <div key={`mobile-list-${cat.title}`} className="border-b border-gray-50">
+                                            <div
+                                                onClick={() => setExpandedMobileCategory(expandedMobileCategory === cat.title ? null : cat.title)}
+                                                className="p-3 px-5 flex justify-between items-center active:bg-gray-50 transition-colors cursor-pointer group"
+                                            >
+                                                <div className="flex items-center gap-4">
+                                                    <div className="w-14 h-14 rounded-full overflow-hidden border border-gray-100 shadow-sm bg-gray-50">
+                                                        <img
+                                                            src={cat.image || "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=100"}
+                                                            alt={cat.title}
+                                                            className="w-full h-full object-cover group-active:scale-110 transition-transform duration-300"
+                                                        />
+                                                    </div>
+                                                    <span className="text-black font-black uppercase text-[13px] tracking-tight">
+                                                        {cat.title}
+                                                    </span>
                                                 </div>
-                                                <span className="text-black font-black uppercase text-[13px] tracking-tight">
-                                                    {cat.title}
-                                                </span>
+                                                {/* Cambia el icono según el estado expandido */}
+                                                {expandedMobileCategory === cat.title ? (
+                                                    <ChevronDown size={18} className="text-black" />
+                                                ) : (
+                                                    <ChevronRight size={18} className="text-gray-300" />
+                                                )}
                                             </div>
-                                            <ChevronRight size={18} className="text-gray-300" />
+
+                                            {/* Subcategorías Animadas */}
+                                            <AnimatePresence>
+                                                {expandedMobileCategory === cat.title && (
+                                                    <motion.div
+                                                        initial={{ height: 0, opacity: 0 }}
+                                                        animate={{ height: "auto", opacity: 1 }}
+                                                        exit={{ height: 0, opacity: 0 }}
+                                                        transition={{ duration: 0.2 }}
+                                                        className="bg-gray-50/50 overflow-hidden"
+                                                    >
+                                                        <ul className="py-2 pl-20 pr-6 space-y-4 pb-4">
+                                                            {cat.items.map((item, idx) => (
+                                                                <li
+                                                                    key={`${cat.title}-item-${idx}`}
+                                                                    className="text-[12px] font-bold text-gray-600 uppercase tracking-tighter active:text-black cursor-pointer"
+                                                                >
+                                                                    {item}
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
                                         </div>
                                     ))}
                                 </div>

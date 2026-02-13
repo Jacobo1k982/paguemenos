@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Pague Menos para todos | Moda Online",
-  description: "La mejor moda al mejor precio, estilo Fashion Nova.",
+  description: "La mejor moda al mejor precio.",
 };
 
 export default function RootLayout({
