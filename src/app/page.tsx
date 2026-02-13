@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import QuickCategories from "@/components/QuickCategories";
 import ProductGrid from "@/components/ProductGrid";
+import BrandGrid from "@/components/BrandGrid";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
           </button>
         </div>
       </section>
+      <BrandGrid />
 
       {/* Product Grid */}
       <section className="p-8">

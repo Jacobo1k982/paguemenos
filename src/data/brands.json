@@ -1,0 +1,40 @@
+{
+    "brands": [
+        {
+            "id": 1,
+            "name": "PaguemenosMEN",
+            "image": "https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?q=80&w=600",
+            "link": "/paguemenos-men"
+        },
+        {
+            "id": 2,
+            "name": "paguemenos",
+            "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600",
+            "link": "/paguemenos-basic"
+        },
+        {
+            "id": 3,
+            "name": "PaguemenosCURVE",
+            "image": "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=600",
+            "link": "/paguemenos-curve"
+        },
+        {
+            "id": 4,
+            "name": "PaguemenosKids",
+            "image": "https://www.shutterstock.com/image-photo/fashion-concept-stylish-children-posing-600nw-2451484593.jpg",
+            "link": "/paguemenos-kids"
+        },
+        {
+            "id": 5,
+            "name": "PaguemenosSCULPT",
+            "image": "https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=600",
+            "link": "/paguemenos-sculpt"
+        },
+        {
+            "id": 6,
+            "name": "PaguemenosLUXE",
+            "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=600",
+            "link": "/paguemenos-luxe"
+        }
+    ]
+}
