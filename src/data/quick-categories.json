@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Vestidos",
+        "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=800",
+        "link": "/vestidos"
+    },
+    {
+        "id": 2,
+        "title": "Jeans",
+        "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=800",
+        "link": "/jeans"
+    },
+    {
+        "id": 3,
+        "title": "Zapatos",
+        "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800",
+        "link": "/zapatos"
+    },
+    {
+        "id": 4,
+        "title": "Accesorios",
+        "image": "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=800",
+        "link": "/accesorios"
+    }
+]

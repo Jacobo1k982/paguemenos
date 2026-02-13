@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "name": "Vestido Midi Ajustado - Negro",
+        "price": 24.99,
+        "originalPrice": 45.00,
+        "images": [
+            "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800",
+            "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800"
+        ],
+        "tag": "MÁS VENDIDO",
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Jeans High Rise Wide Leg",
+        "price": 39.99,
+        "originalPrice": null,
+        "images": [
+            "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=800",
+            "https://images.unsplash.com/photo-1582552938357-32b906df40cb?q=80&w=800"
+        ],
+        "tag": "NUEVO",
+        "sizes": [
+            "24",
+            "26",
+            "28",
+            "30"
+        ]
+    }
+]

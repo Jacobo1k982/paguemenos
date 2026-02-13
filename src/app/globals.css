@@ -23,4 +23,19 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #000;
+  /* Texto negro por defecto */
+  background-color: #fff;
+  /* Fondo blanco estilo Fashion Nova */
+}
+
+@layer base {
+  body {
+    @apply bg-white text-black antialiased;
+    /* antialiased suaviza las fuentes para que se lean mejor */
+    color: #000000;
+  }
 }

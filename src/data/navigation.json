@@ -1,0 +1,49 @@
+{
+    "categories": [
+        {
+            "title": "Vestidos",
+            "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=200",
+            "items": [
+                "Recién Llegado",
+                "Vestidos de Noche",
+                "Maxi Vestidos",
+                "Mini Vestidos",
+                "Vestidos Casuales"
+            ]
+        },
+        {
+            "title": "Jeans",
+            "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=200",
+            "items": [
+                "Skinny",
+                "High Waisted",
+                "Mom Jeans",
+                "Cargo Pants",
+                "Shorts",
+                "Wide Leg"
+            ]
+        },
+        {
+            "title": "Zapatos",
+            "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=200",
+            "items": [
+                "Tacones",
+                "Botas",
+                "Sandalias",
+                "Tenis",
+                "Plataformas"
+            ]
+        },
+        {
+            "title": "Accesorios",
+            "image": "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=200",
+            "items": [
+                "Bolsos",
+                "Joyería",
+                "Cinturones",
+                "Gafas de Sol",
+                "Sombreros"
+            ]
+        }
+    ]
+}
